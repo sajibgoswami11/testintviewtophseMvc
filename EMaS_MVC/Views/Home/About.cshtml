@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+@model  EMaS_MVC.Models.User
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>@ViewBag.title</h2>
+            <a href="" class="btn btn-success">om</a>
+            <table class="table table-bordered">
+                @foreach (var user in ViewBag.users)
+                {
+                    <tr>
+                        <td>@user.SYS_USR_LOGIN_NAME</td>
+                        <td>@user.SYS_USR_PASS</td>
+                        <td>
+                          </td>
+                </tr>
+
+            }
+            </table>
+        </div>
+    </div>
+</div>
