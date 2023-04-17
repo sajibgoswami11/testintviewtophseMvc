@@ -46,7 +46,7 @@ namespace EMaS_MVC.Controllers
         {
             if (GetLoginUserData() == null)
                 return Redirect("~/Home/Login");
-                ViewBag.chkAuth = userAuthentication;
+            ViewBag.chkAuth = userAuthentication;
             return View();
         }
 
@@ -71,9 +71,15 @@ namespace EMaS_MVC.Controllers
         }
         public ActionResult About()
         {
-            var data =  _appDb.Users.Take(20).ToList();
-            ViewBag.users = data;
-            return View();
+            if (GetLoginUserData() == null)
+                return Redirect("~/Home/Login");
+            else
+            {
+
+                var data = _appDb.Users.Take(20).ToList();
+                ViewBag.users = data;
+                return View();
+            }
         }
 
         public ActionResult Contact()
