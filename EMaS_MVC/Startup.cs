@@ -8,6 +8,7 @@ namespace EMaS_MVC
     {
         public void Configuration(IAppBuilder app)
         {
+
         }
     }
 }
